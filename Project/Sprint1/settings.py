@@ -2,16 +2,16 @@ import sys
 from PyQt5 import QtWidgets
 from PyQt5 import uic
 
-class TitleScreen(QtWidgets.QMainWindow):
+class SettingScreen(QtWidgets.QMainWindow):
     def __init__(self):
-        print("Initializing TitleScreen")
-        super(TitleScreen, self).__init__()
-        uic.loadUi('title.ui', self)
+        print("Initializing SettingScreen")
+        super(SettingScreen, self).__init__()
+        uic.loadUi('settings.ui', self)
         self.show()
 
 def main():
     app = QtWidgets.QApplication(sys.argv)
-    window = TitleScreen()
+    window = SettingScreen()
     window.show()
     app.exec_()
 
