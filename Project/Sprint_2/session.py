@@ -23,7 +23,7 @@ def get_login_data(conn):
     # Pass username and password to database for verification
     conn_db = sqlite3.connect("data.db")
     cur = conn_db.cursor()
-    cur.execute("SELECT * FROM users WHERE username = ? AND password = ?", (username, password))
+    cur.execute("SELECT * FROM users WHERE username = ? AND password = ?", (username, str(password)))
 
     if cur.fetchall():
         conn.send("Login attempt successfull.".encode())
